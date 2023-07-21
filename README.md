@@ -4,11 +4,11 @@
 # tf2-servers
 
 <p>
-  <a href="https://github.com/melkortf/tf2-servers/releases">
-    <img alt="Latest release" src="https://img.shields.io/github/v/release/melkortf/tf2-servers">
+  <a href="https://github.com/julxyz/tf2-servers/releases">
+    <img alt="Latest release" src="https://img.shields.io/github/v/release/julxyz/tf2-servers">
   </a>
-  <a href="https://github.com/melkortf/tf2-servers/actions/workflows/build.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/melkortf/tf2-servers/build.yml" alt="Build status">
+  <a href="https://github.com/julxyz/tf2-servers/actions/workflows/build.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/julxyz/tf2-servers/build.yml" alt="Build status">
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/license-MIT-d4c0bf.svg" alt="MIT license">
@@ -17,6 +17,7 @@
 
 **[Team Fortress 2 Dedicated Server](https://wiki.teamfortress.com/wiki/Linux_dedicated_server) Docker images for multiple purposes**
 
+### This fork is made [Pterodactyl](https://pterodactyl.io/) compatible by renaming the user to container
 
 ```
 $ docker run \
