@@ -12,7 +12,7 @@ RUN apt-get -y update\
 
 
 FROM steamcmd/steamcmd:ubuntu-20
-LABEL maintainer="garrappachc@gmail.com"
+LABEL maintainer="jul@jul.xyz"
 
 RUN DEBIAN_FRONTEND=noninteractive \
   && dpkg --add-architecture i386 \
