@@ -34,7 +34,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     libbsd0 \
   && rm -rf /var/lib/apt/lists/*
 
-ARG USER=tf2
+ARG USER=container
 ARG HOME=/home/$USER
 ARG SERVER_DIR=$HOME/server
 ARG APP_ID=232250
