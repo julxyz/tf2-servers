@@ -22,7 +22,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/melkortf/tf2-base
+          images: ${{ env.REGISTRY }}/julxyz/tf2-base
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -58,7 +58,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/melkortf/tf2-sourcemod
+          images: ${{ env.REGISTRY }}/julxyz/tf2-sourcemod
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -94,7 +94,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/melkortf/tf2-competitive
+          images: ${{ env.REGISTRY }}/julxyz/tf2-competitive
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -130,7 +130,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/melkortf/tf2-mge
+          images: ${{ env.REGISTRY }}/julxyz/tf2-mge
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -166,7 +166,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/melkortf/tf2-dm
+          images: ${{ env.REGISTRY }}/julxyz/tf2-dm
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
