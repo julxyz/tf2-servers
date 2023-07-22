@@ -79,11 +79,11 @@ ENV STV_TITLE="A Team Fortress 2 server Source TV"
 ENV STV_PASSWORD=
 ENV DOWNLOAD_URL="https://dl.serveme.tf/"
 
-WORKDIR $SERVER_DIR
-COPY entrypoint.sh .
+WORKDIR $HOME
+COPY entrypoint.sh /entrypoint.sh
 COPY healthcheck.sh .
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["bin/bash" "/entrypoint.sh"]
 CMD ["+sv_pure", "1", "+map", "cp_badlands", "+maxplayers", "24"]
 
 EXPOSE $PORT/tcp
