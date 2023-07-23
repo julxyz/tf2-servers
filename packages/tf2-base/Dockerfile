@@ -10,7 +10,7 @@ RUN apt-get -y update\
   && cmake .. \
   && make
 
-FROM busybox:uclib as busybox
+FROM busybox:uclibc as busybox
 
 FROM steamcmd/steamcmd:ubuntu-20
 LABEL maintainer="jul@jul.xyz"
