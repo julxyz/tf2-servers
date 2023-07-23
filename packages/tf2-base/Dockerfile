@@ -83,7 +83,7 @@ WORKDIR $HOME
 COPY entrypoint.sh /entrypoint.sh
 COPY healthcheck.sh .
 
-ENTRYPOINT ["bin/bash" "/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash" "/entrypoint.sh"]
 CMD ["+sv_pure", "1", "+map", "cp_badlands", "+maxplayers", "24"]
 
 EXPOSE $PORT/tcp
