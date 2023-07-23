@@ -23,7 +23,7 @@
 $ docker run \
   -v "maps:/home/tf2/server/tf/maps" \
   -e "RCON_PASSWORD=foobar123" \
-  -e "SERVER_HOSTNAME=melkor.tf" \
+  -e "SERVER_HOSTNAME=pterodactyl tf2 server" \
   -e "STV_NAME=melkor TV" \
   --network=host \
   ghcr.io/julxyz/tf2-base
