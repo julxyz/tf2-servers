@@ -10,9 +10,12 @@ RUN apt-get -y update\
   && cmake .. \
   && make
 
+FROM busybox:uclib as busybox
 
 FROM steamcmd/steamcmd:ubuntu-20
 LABEL maintainer="jul@jul.xyz"
+
+COPY --from=busybox /bin/bash /bin/bash
 
 RUN DEBIAN_FRONTEND=noninteractive \
   && dpkg --add-architecture i386 \
@@ -49,7 +52,7 @@ USER $USER
 WORKDIR $HOME
 
 COPY maps_to_keep .
-RUN steamcmd +login anonymous +force_install_dir $SERVER_DIR +app_update $APP_ID +quit \
+RUN steamcmd +force_install_dir +login anonymous $SERVER_DIR +app_update $APP_ID +quit \
   && find $SERVER_DIR/tf/maps -type f | grep -v "$(cat maps_to_keep)" | xargs rm -rf \
   && rm maps_to_keep
 
@@ -57,8 +60,8 @@ RUN mkdir $HOME/.steam/sdk32 \
   && ln -s $HOME/.steam/steamcmd/linux32/steamclient.so $HOME/.steam/sdk32/ \
   && printf "@ShutdownOnFailedCommand 1\n\
 @NoPromptForPassword 1\n\
-login anonymous\n\
 force_install_dir ${SERVER_DIR}\n\
+login anonymous\n\
 app_update ${APP_ID}\n\
 quit" >> $HOME/tf2.txt
 
@@ -79,11 +82,10 @@ ENV STV_TITLE="A Team Fortress 2 server Source TV"
 ENV STV_PASSWORD=
 ENV DOWNLOAD_URL="https://dl.serveme.tf/"
 
-WORKDIR $SERVER_DIR
 COPY entrypoint.sh .
 COPY healthcheck.sh .
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/bin/bash" "entrypoint.sh"]
 CMD ["+sv_pure", "1", "+map", "cp_badlands", "+maxplayers", "24"]
 
 EXPOSE $PORT/tcp
